@@ -1,0 +1,72 @@
+package com.shivam.rest_api.controllor;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+import com.shivam.rest_api.dto.ConsumerDTO;
+import com.shivam.rest_api.dto.Consumer_Flip_User;
+
+@RestController
+public class ConsumerControllor {
+
+	@RequestMapping("/add")
+	public String addUser(@RequestBody ConsumerDTO user ) {
+		//RestTem obj
+		RestTemplate rest=new RestTemplate();
+		//method type
+		//payload sample yes
+//		ConsumerDTO user=new ConsumerDTO();
+//		user.setfName("Shivam");
+//		user.setfName("Gawande");
+//		user.setEmail("shivamgawande0503@gmail.com");
+//		user.setCity("Akola");
+//		user.setCountry("India");
+//		user.setGender("Male");
+//		user.setAge(24);
+		
+		HttpEntity<ConsumerDTO> entity = new HttpEntity<ConsumerDTO>(user);
+		ResponseEntity<String> response= rest.exchange("http://localhost:9999/rest-api/addUser", HttpMethod.POST, entity, String.class);
+		System.out.println(response.getStatusCode());
+		System.out.println(response.getBody());
+		return response.getBody();
+	}
+	
+	@RequestMapping("/getUserInfo")
+	public List<ConsumerDTO> getUserInformation(@RequestParam String cityValue,@RequestParam(required = false) String genderValue){
+		
+		String url="http://localhost:9999/rest-api/getUser?City={cityValue}&gender={genderValue}";
+		
+		Map<String,String> values = new HashMap<>();
+		values.put("cityValue", cityValue);
+		values.put("genderValue", genderValue);
+		
+		RestTemplate rest = new RestTemplate();
+		List<ConsumerDTO> users = rest.getForEntity(url, List.class, values).getBody();
+		System.out.println(rest.getForEntity(url, List.class, values).getBody());
+		System.out.println(rest.getForEntity(url, List.class, values).getStatusCode());
+		return users;
+		
+	}
+	
+	@RequestMapping("/addFlipUser")
+	public String addUser(@RequestBody Consumer_Flip_User user){
+		String url="http://localhost:9999/rest-api/user/create";
+		RestTemplate rest = new RestTemplate();
+		HttpEntity<Consumer_Flip_User> entity= new HttpEntity<Consumer_Flip_User>(user);
+		ResponseEntity<String> response=rest.postForEntity(url, entity, String.class);
+		System.out.println(response.getBody());
+		System.out.println(response.getStatusCode());
+		return response.getBody();
+	}
+}
+

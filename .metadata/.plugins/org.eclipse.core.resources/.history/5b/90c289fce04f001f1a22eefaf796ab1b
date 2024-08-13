@@ -1,0 +1,16 @@
+package com.shivam.rest_api.service;
+
+import org.springframework.stereotype.Service;
+
+import com.shivam.rest_api.DTO.StudentDTO;
+
+@Service
+public class StudentServiceImpl implements StudentService {
+
+	@Override
+	public String regStudent(StudentDTO dto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

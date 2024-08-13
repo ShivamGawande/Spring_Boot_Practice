@@ -1,0 +1,30 @@
+package com.shivam.rest_api.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.shivam.rest_api.DTO.StudentDTO;
+import com.shivam.rest_api.DTO.SubjectDTO;
+import com.shivam.rest_api.entity.Student;
+import com.shivam.rest_api.entity.Subject;
+
+@Service
+public class StudentServiceImpl implements StudentService {
+
+	@Override
+	public String regStudent(StudentDTO dto) {
+		Student stud = new Student();
+		stud.setStudentName(dto.getStudentName());
+		stud.setStudentAddress(dto.getStudentAddress());
+		List<Subject> subList = new ArrayList<>();
+		for(SubjectDTO subject : dto.getSubject()) {
+			Subject sub = new Subject();
+			sub.setSubjectName(subject.getSubjectName());
+			subList.add(sub);
+		}
+		return null;
+	}
+
+}

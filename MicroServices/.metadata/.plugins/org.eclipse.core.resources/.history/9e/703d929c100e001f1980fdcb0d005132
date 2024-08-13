@@ -1,0 +1,18 @@
+package com.shivam.order.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "MS_Flip_Order_DTS")
+public class OrderEntity {
+	
+	@Id
+	String orderId;
+	String name;
+	String email;
+	String contact;
+	double amount;
+
+}

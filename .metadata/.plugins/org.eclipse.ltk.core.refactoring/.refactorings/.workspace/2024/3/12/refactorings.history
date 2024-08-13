@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;SpringBoot_RESTAPI_UsingPostman_Basic&apos;" deleteContents="false" description="Delete resource &apos;SpringBoot_RESTAPI_UsingPostman_Basic&apos;" element1="/SpringBoot_RESTAPI_UsingPostman_Basic" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1710744214911"/>
+</session>

@@ -1,0 +1,17 @@
+package com.shivam.user.controllor;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.shivam.user.dto.UserRequuestDTO;
+
+@RestController
+public class UserControllor {
+	
+	@PostMapping("/user/register")
+	public ResponseEntity<String> userRegister(@RequestBody UserRequuestDTO dto){
+		return null;
+	}
+}

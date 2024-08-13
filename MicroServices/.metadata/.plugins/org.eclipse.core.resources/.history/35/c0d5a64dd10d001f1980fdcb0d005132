@@ -1,0 +1,7 @@
+package com.shivam.user.service;
+
+import com.shivam.user.dto.UserRequuestDTO;
+
+public interface UserService {
+	String addUser(UserRequuestDTO dto);
+}

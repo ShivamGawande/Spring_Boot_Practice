@@ -1,0 +1,9 @@
+package com.shivam.user.service;
+
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.shivam.user.dto.UserRequuestDTO;
+
+public interface UserService {
+	String addUser(UserRequuestDTO dto);
+}

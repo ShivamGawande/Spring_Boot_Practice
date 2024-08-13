@@ -1,0 +1,3 @@
+spring.application.name=SpringBootRegistry
+
+server.port=8761

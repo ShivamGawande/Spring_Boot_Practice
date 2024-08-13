@@ -1,0 +1,21 @@
+package com.shivam.rest_api.controllor;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.shivam.rest_api.DTO.StudentDTO;
+import com.shivam.rest_api.service.StudentService;
+
+@RestController
+public class MVC_Controllor {
+
+	@Autowired
+	StudentService student;
+	
+	@PostMapping("/createStudent")
+	public String createStudent(@RequestBody StudentDTO dto) {
+		return student.regStudent(dto);
+	}
+}

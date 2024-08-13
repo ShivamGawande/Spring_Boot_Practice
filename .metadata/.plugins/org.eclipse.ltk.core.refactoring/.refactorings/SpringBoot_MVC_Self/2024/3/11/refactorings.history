@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;SpringBoot_MVC_Self/src/main/webapp/WEB-INF/views/result.jsp&apos; to &apos;ordersuccess.jsp&apos;" description="Rename resource &apos;result.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/WEB-INF/views/result.jsp" name="ordersuccess.jsp" stamp="1710260885780" updateReferences="true"/>
+</session>

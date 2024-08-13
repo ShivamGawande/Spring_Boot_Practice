@@ -1,0 +1,5 @@
+package com.shivam.order.service;
+
+public class OrderServiceIMPL implements Order{
+
+}

@@ -1,0 +1,9 @@
+package com.shivam.rest_api.service;
+
+import com.shivam.rest_api.DTO.StudentDTO;
+
+public interface StudentService {
+
+	public String regStudent(StudentDTO dto);
+
+}

@@ -1,0 +1,9 @@
+package com.shivam.rest_api.controllor;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class MVC_Controllor {
+
+	
+}

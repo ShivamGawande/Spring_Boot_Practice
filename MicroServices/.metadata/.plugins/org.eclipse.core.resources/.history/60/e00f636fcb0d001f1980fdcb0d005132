@@ -1,0 +1,5 @@
+package com.shivam.user.entity;
+
+public class UserEntity {
+
+}

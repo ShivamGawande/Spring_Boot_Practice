@@ -1,0 +1,48 @@
+package com.shivam.mvc.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.shivam.mvc.entity.UserDetails;
+import com.shivam.mvc.repository.UserDetailsRepository;
+
+@Service
+public class UserService {
+
+	@Autowired
+	UserDetailsRepository userDetailsRepository;
+	
+	public String registerUserInfo(String fname,String lname,String email,String mobile,String gender,String pass ) {
+		UserDetails user1=new UserDetails();
+		user1.setfName(fname);
+		user1.setlName(lname);
+		user1.setEmail(email);
+		user1.setMobile(mobile);
+		user1.setEmail(email);
+		user1.setPass(pass);
+		user1.setGender(gender);
+		
+		if(userDetailsRepository.findById(email).isPresent()) {
+			return"Email id is already registered : "+user1.getEmail();
+		}
+		else if(userDetailsRepository.findByMobile(mobile).isPresent()) {
+			return"mobile number is already registered : "+user1.getMobile();
+		}
+		else {
+		userDetailsRepository.save(user1);
+		return "User Register Successfully";
+		}
+		
+		
+	}
+	public String validateUser(String email,String pass ) {
+		if(userDetailsRepository.findByEmailAndPass(email, pass).isPresent()) {
+			UserDetails user1=userDetailsRepository.findByEmailAndPass(email, pass).get();
+			String msg=user1.getEmail()+"you are successfully log in ";
+			return msg;
+		}
+		return "Invalid credentials";
+	}
+	
+	
+}

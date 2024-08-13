@@ -1,0 +1,5 @@
+package com.shivam.user.dto;
+
+public class UserCredentials {
+
+}

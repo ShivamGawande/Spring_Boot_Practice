@@ -1,0 +1,11 @@
+package com.shivam.user.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.shivam.user.entity.UserEntity;
+
+
+public interface UserRepo extends JpaRepository<UserEntity, String> {
+	
+	UserEntity findByEmaiAndPassword(String email,String password);
+}

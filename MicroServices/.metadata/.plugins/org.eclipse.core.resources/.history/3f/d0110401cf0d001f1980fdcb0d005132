@@ -1,0 +1,28 @@
+package com.shivam.user.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.shivam.user.dto.UserRequuestDTO;
+import com.shivam.user.entity.UserEntity;
+import com.shivam.user.repository.UserRepo;
+
+@Service
+public class UserServiceImpl implements UserService{
+
+	@Autowired
+	UserRepo userRepo;
+	
+	@Override
+	public String addUser(UserRequuestDTO dto) {
+		if(userRepo.findById(dto.getEmail()).isPresent()) {
+			return null;
+		}
+		else {
+			userRepo.save(UserEntity.builder()
+					.email(dto.getEmail()))
+		}
+		
+	}
+
+}

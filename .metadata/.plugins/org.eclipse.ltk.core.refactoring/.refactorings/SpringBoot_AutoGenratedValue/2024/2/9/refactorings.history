@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move package &apos;com.shivam.jpa.entity&apos; to &apos;SpringBoot_AutoGenratedValue/src/main/java/com.shivam.jpa&apos;&#x0D;&#x0A;- Original project: &apos;SpringBoot_AutoGenratedValue&apos;&#x0D;&#x0A;- Destination element: &apos;SpringBoot_AutoGenratedValue/src/main/java/com.shivam.jpa&apos;&#x0D;&#x0A;- Original element: &apos;SpringBoot_AutoGenratedValue/src/test/java/com.shivam.jpa.entity&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move package" destination="/src\/main\/java=/gradle_scope=/main=/=/gradle_used_by_scope=/main,test=/&lt;com.shivam.jpa" element1="/src\/test\/java=/gradle_scope=/test=/=/gradle_used_by_scope=/test=/=/test=/true=/&lt;com.shivam.jpa.entity" flags="589830" fragments="1" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.movePackages" stamp="1709227187279" version="1.0"/>
+</session>

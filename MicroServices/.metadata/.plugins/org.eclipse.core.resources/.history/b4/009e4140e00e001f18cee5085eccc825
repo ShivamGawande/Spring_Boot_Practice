@@ -1,0 +1,16 @@
+spring.application.name=payment-service
+
+
+server.port=8010
+
+
+server.servlet.context-path=/payment
+
+
+spring.datasource.url=jdbc:oracle:thin:@localhost:1521:orcl
+spring.datasource.username=c##springboot
+spring.datasource.password=shiv
+
+
+spring.jpa.hibernate.ddl-auto=create
+spring.jpa.show-sql=true
